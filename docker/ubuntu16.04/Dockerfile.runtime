@@ -1,4 +1,4 @@
-FROM ubuntu:16.04 AS build
+FROM ubuntu:xenial-20210416 AS build
 #shell,rtmp,rtsp,rtsps,http,https,rtp
 EXPOSE 9000/tcp
 EXPOSE 1935/tcp
@@ -39,7 +39,7 @@ WORKDIR /opt/media/ZLMediaKit/build
 RUN cmake -DCMAKE_BUILD_TYPE=Release .. && \
     make
 
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210416
 LABEL maintainer "Gemfield <gemfield@civilnet.cn>"
 
 RUN apt-get update && \
